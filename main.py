@@ -17,7 +17,6 @@ def send_msg(text: str):
     )
 
 def load_movie(date: str) -> dict:
-    print(data)
     res = requests.get(
         r'https://cgv.co.kr/api/v1/booking/searchMovScnInfo',
         params={
@@ -47,8 +46,10 @@ def load_movies() -> list:
     return movies
 
 async def main():
-    print('Run main')
-    pre_movies = set(load_movies())
+    try:
+        pre_movies = set(load_movies())
+    except:
+        traceback.print_exc()
     while True:
         try:
             print(f'Load movies at {datetime.datetime.now().strftime(r"%Y.%m.%d %H:%M:%S")}')
