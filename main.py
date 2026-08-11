@@ -47,6 +47,8 @@ def load_movies() -> list:
 
 async def main():
     pre_movies = set(load_movies())
+    print(pre_movies)
+    send_msg(list(pre_movies)[0])
     while True:
         try:
             print(f'Load movies at {datetime.datetime.now().strftime(r"%Y.%m.%d %H:%M:%S")}')
