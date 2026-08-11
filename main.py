@@ -17,6 +17,7 @@ def send_msg(text: str):
     )
 
 def load_movie(date: str) -> dict:
+    print(data)
     res = requests.get(
         r'https://cgv.co.kr/api/v1/booking/searchMovScnInfo',
         params={
