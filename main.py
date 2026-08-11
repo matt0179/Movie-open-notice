@@ -32,6 +32,7 @@ def load_movie(date: str) -> dict:
         }, 
         timeout=10
     )
+    print(res)
     return res.json()
 
 def load_movies() -> list:
