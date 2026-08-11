@@ -46,10 +46,8 @@ def load_movies() -> list:
     return movies
 
 async def main():
-    try:
-        pre_movies = set(load_movies())
-    except:
-        traceback.print_exc()
+    print('Run main')
+    pre_movies = set(load_movies())
     while True:
         try:
             print(f'Load movies at {datetime.datetime.now().strftime(r"%Y.%m.%d %H:%M:%S")}')
